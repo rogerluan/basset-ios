@@ -33,7 +33,7 @@ It should also work on other [Unix-like](https://en.wikipedia.org/wiki/Unix-like
 
 On your Terminal, run:
 
-```bash
+```javascript
 brew tap Polidea/tap
 curl -s https://raw.githubusercontent.com/rogerluan/basset-ios/master/patched_basset_ios.rb > /usr/local/Homebrew/Library/Taps/polidea/homebrew-tap/basset_ios.rb
 brew install imagemagick
@@ -41,7 +41,7 @@ brew install basset_ios
 ```
 
 Add this to your `~/.zshrc` file (or your bash profile file, depending on your shell environment):
-```bash
+```javascript
 # The last part of the path should be whatever version of imagemagic@6 you have installed. Type in until the imagemagic@6 part and then press Tab to let it auto-complete with the version it has installed.
 export MAGICK_HOME=/usr/local/Cellar/imagemagick@6/6.9.11-28/
 ```
@@ -52,7 +52,7 @@ After adding the `export` line, close Terminal and reopen it. Alternatively, you
 
 To upgrade **Basset**, type:
 
-```bash
+```javascript
 brew update
 brew upgrade basset_ios
 ```
@@ -71,7 +71,7 @@ Also keep in mind to convert all fonts in the artboards to outlines (you can als
 
 In order to convert SVGs with gradients to PNGs, we're using *librsvg*. The problem is that this library installed incorrectly by Homebrew. To fix this, we need to reinstall it:
 
-```bash
+```javascript
 brew uninstall librsvg
 brew uninstall basset_ios
 brew install basset_ios
@@ -108,13 +108,13 @@ force_convert: false
 
 You can run **Basset** with configuration file by providing path to it as `-c` parameter, such as:
 
-```bash
+```javascript
 basset_ios -c "Assets/config.yml"
 ```
 
 ### Command line
 
-```bash
+```javascript
 usage: basset_ios [-h] [-r RAW_ASSETS_DIR] [-x XCASSETS_DIR]
                   [-g GENERATED_ASSETS_DIR] [-f FORCE_CONVERT]
                   [-m MERGE_WITH_XCASSETS] [-e EXTRACT_PATH] [-c CONFIG]
@@ -157,7 +157,7 @@ Extract arguments:
 
 If you have an existing project with PDFs, you can extract them to a separate directory, making them available for future use. To do that, run:
 
-```bash
+```javascript
 basset_ios -e <path_to_xcassets_dir> -r <path_to_vector_assets_dir>
 ```
 
@@ -187,7 +187,7 @@ and save it as `config.yml` in project root folder:
 
 4. Open terminal, change your current directory to your iOS project, and run:
 
-```bash
+```javascript
 basset_ios -c config.yml
 ```
 
